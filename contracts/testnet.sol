@@ -1,26 +1,25 @@
-// SRA-License-Identifier
+// SPDX-License-Identifier: SRA
 pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract Date is Ownable, ERC721 {
+contract SRA is Ownable, ERC721 {
 
     struct Metadata {
-        uint16 year;
-        uint8 month;
-        uint8 day;
-        uint8 color;
-        string title;
+        string skinName;
+        string skinUrl;
     }
 
     mapping(uint256 => Metadata) id_to_date;
 
     string private _currentBaseURI;
 
-    constructor() public ERC721("Date", "DATE") {
+    constructor() public ERC721("SRA", "SRA") {
         setBaseURI("https://date.kie.codes/token/");
 
+        string memory url = "QmdLq13hJJG8nPjSmRnrGEWDNJhA5bjRtP1VwXixztaABB";
+        mint("kyungmoo", url);
     }
 
     function setBaseURI(string memory baseURI) public onlyOwner {
@@ -31,11 +30,14 @@ contract Date is Ownable, ERC721 {
         return _currentBaseURI;
     }
 
-    function mint(uint16 year, uint8 month, uint8 day, uint8 color, string memory title) internal {
-        uint256 tokenId = id(year, month, day);
+    function mint(string memory skinName, string memory skinUrl) internal {
+        string memory prefixUrl = "ipfs://";
+        skinUrl = abi.encodePacked(prefixUrl, skinUrl);
+
+        uint256 tokenId = uint256(keccak256(skinUrl));
         
-        id_to_date[tokenId] = Metadata(year, month, day, color, title);
-        _safeMint(msg.sender, tokenId);
+        id_to_date[tokenId] = Metadata(skinName, skinUrl);
+        _safeMint(msg.sender, skinUrl);
     }
 
     function claim(uint16 year, uint8 month, uint8 day, string calldata title) external payable {
