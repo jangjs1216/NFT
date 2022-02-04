@@ -160,6 +160,7 @@ contract Date is Ownable, ERC721 {
     }
 
     function pseudoRNG(uint16 year, uint8 month, uint8 day, string memory title) internal view returns (uint256) {
+        // hash code
         return uint256(keccak256(abi.encode(block.timestamp, block.difficulty, year, month, day, title)));
     }
 }
