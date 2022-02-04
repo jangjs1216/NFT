@@ -30,22 +30,31 @@ contract SRA is Ownable, ERC721 {
         return _currentBaseURI;
     }
 
-    function mint(string memory skinName, string memory skinUrl) internal {
-        string memory prefixUrl = "ipfs://";
-        skinUrl = abi.encodePacked(prefixUrl, skinUrl);
+    function stringConcat(string memory s1, string memory s2) public pure returns(string memory){
+       return string(abi.encodePacked(s1, s2));
+    }
 
-        uint256 tokenId = uint256(keccak256(skinUrl));
+    function mint(string memory skinName, string memory skinUrl) public {
+        string memory prefixUrl = "ipfs://";
+        skinUrl = stringConcat(prefixUrl, skinUrl);
+
+        uint256 tokenId = uint256(keccak256(abi.encodePacked(skinUrl)));
         
         id_to_date[tokenId] = Metadata(skinName, skinUrl);
-        _safeMint(msg.sender, skinUrl);
+        _safeMint(msg.sender, tokenId);
     }
 
     function claim(uint16 year, uint8 month, uint8 day, string calldata title) external payable {
 
     }
 
-    function ownerOf(uint16 year, uint8 month, uint8 day) public view returns(address) {
+    function ownerOf(string memory skinUrl) public view returns(string memory) {
+        string memory prefixUrl = "ipfs://";
+        skinUrl = stringConcat(prefixUrl, skinUrl);
 
+        uint256 tokenId = uint256(keccak256(abi.encodePacked(skinUrl)));
+
+        return id_to_date[tokenId].skinName;
     }
 
     function id(uint16 year, uint8 month, uint8 day) pure internal returns(uint256) {
