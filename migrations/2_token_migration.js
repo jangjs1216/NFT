@@ -1,5 +1,5 @@
-const DateToken = artifacts.require("SRA");
+const SkinToken = artifacts.require("skinNFT");
 
 module.exports = function (deployer) {
-  deployer.deploy(DateToken);
+  deployer.deploy(SkinToken);
 };
