@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Project Documentation
+    url: https://github.com/jangjs1216/NFT/blob/main/README.md
+    about: Read the project documentation and README for basic information
+  - name: 💬 GitHub Discussions
+    url: https://github.com/jangjs1216/NFT/discussions
+    about: Join community discussions about the NFT Date Token project
+  - name: 🎥 YouTube Tutorial Series
+    url: https://www.youtube.com/watch?v=GAFh2Z5VtgM&list=PLuZkwckxno0o7_GZoOBp2gnX5DfakVcxy
+    about: Watch the "NFT with no clue" video series for detailed explanations

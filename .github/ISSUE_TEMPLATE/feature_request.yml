@@ -1,0 +1,152 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for the NFT Date Token project
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature for the NFT Date Token project!
+        
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting your feature request
+      options:
+        - label: I have searched existing issues and this feature hasn't been requested
+          required: true
+        - label: I have read the project README and understand the current functionality
+          required: true
+          
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature Summary
+      description: Provide a brief summary of the feature you'd like to see implemented
+      placeholder: A clear and concise description of the feature...
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which component would this affect?
+      description: Select the component that would be impacted by this feature
+      options:
+        - Smart Contract (Date.sol)
+        - Smart Contract (skinNFT.sol)
+        - Frontend Application
+        - Build System
+        - Tests
+        - Documentation
+        - New Component
+        - Multiple Components
+    validations:
+      required: true
+      
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: |
+        Is your feature request related to a problem? Please describe the problem you're trying to solve.
+        What limitation or pain point does this address?
+      placeholder: |
+        I'm frustrated when...
+        Current limitations include...
+        The problem is that...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: |
+        Describe the solution you'd like to see implemented.
+        How should this feature work? What should the user experience be?
+      placeholder: |
+        I would like to see...
+        The feature should work by...
+        Users should be able to...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: |
+        Describe any alternative solutions or features you've considered.
+        Are there existing workarounds?
+      placeholder: |
+        Alternatives I've considered include...
+        Current workarounds are...
+        
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this feature to you?
+      options:
+        - Critical - Project unusable without this
+        - High - Significantly improves user experience
+        - Medium - Nice to have improvement
+        - Low - Minor enhancement
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this? (Select all that apply)
+      options:
+        - label: New smart contract functionality
+        - label: Frontend/UI improvement
+        - label: Developer experience enhancement
+        - label: Performance optimization
+        - label: Security enhancement
+        - label: Documentation improvement
+        - label: Testing improvement
+        - label: Accessibility improvement
+        
+  - type: textarea
+    id: technical-details
+    attributes:
+      label: Technical Implementation Details
+      description: |
+        If you have technical knowledge, please provide any implementation details or suggestions.
+        This could include contract methods, UI mockups, API changes, etc.
+      placeholder: |
+        Technical suggestions:
+        - New contract method: claimMultipleDates()
+        - UI changes: Add date picker component
+        - API endpoints: GET /api/dates/range
+        
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Expected Benefits
+      description: |
+        What benefits would this feature provide to users, developers, or the project?
+        How would success be measured?
+      placeholder: |
+        Benefits include:
+        - Improved user experience for...
+        - Reduced gas costs by...
+        - Enhanced security through...
+        
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: |
+        Add any other context, screenshots, mockups, or examples about the feature request here.
+        Links to similar implementations in other projects are also helpful.
+      placeholder: |
+        Additional information:
+        - Similar feature in project X: [link]
+        - Mockup: [attach image]
+        - Related resources: [links]

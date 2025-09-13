@@ -1,0 +1,135 @@
+name: Question or Support
+description: Ask a question or get support for using the NFT Date Token project
+title: "[Question]: "
+labels: ["question", "support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your question about the NFT Date Token project!
+        
+        Before asking, please check:
+        - The project README
+        - Existing issues and discussions
+        - The smart contract documentation/comments
+        
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before asking your question
+      options:
+        - label: I have read the project README
+          required: true
+        - label: I have searched existing issues for similar questions
+          required: true
+          
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question Category
+      description: What category does your question fall into?
+      options:
+        - Smart Contract Usage
+        - Frontend Integration
+        - Development Setup
+        - Deployment and Networks
+        - Token Economics
+        - Date Mechanics
+        - Gas Optimization
+        - Security Best Practices
+        - Project Architecture
+        - General Usage
+        - Other
+    validations:
+      required: true
+      
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: |
+        Please provide a clear and detailed question.
+        Include context about what you're trying to achieve.
+      placeholder: |
+        My question is about...
+        I'm trying to...
+        I need help with...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and Background
+      description: |
+        Provide any relevant context that might help answer your question.
+        What are you building? What's your use case?
+      placeholder: |
+        I'm working on...
+        My use case involves...
+        The context is...
+        
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What Have You Tried?
+      description: |
+        Describe what you've already tried or researched.
+        This helps avoid duplicate suggestions and shows your effort.
+      placeholder: |
+        I have tried:
+        1. Reading the documentation about...
+        2. Looking at the contract code for...
+        3. Searching for examples of...
+        
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency Level
+      description: How urgent is this question for you?
+      options:
+        - Low - General curiosity or learning
+        - Medium - Working on project, not time-sensitive
+        - High - Blocked on current development
+        - Critical - Production issue needs immediate help
+    validations:
+      required: true
+      
+  - type: textarea
+    id: code-example
+    attributes:
+      label: Relevant Code/Examples
+      description: |
+        If your question involves code, please provide relevant examples.
+        Include contract interactions, frontend code, or configuration files.
+      placeholder: |
+        ```javascript
+        // Your code example here
+        ```
+        
+        Or describe the specific function/feature you're asking about.
+        
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected Outcome
+      description: |
+        What outcome or answer are you hoping for?
+        What would a successful resolution look like?
+      placeholder: |
+        I expect to understand...
+        I hope to achieve...
+        Success would look like...
+        
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: |
+        Any other relevant information, links, or context that might help.
+      placeholder: |
+        Additional context:
+        - Environment: Local/Testnet/Mainnet
+        - Tools: Truffle/Hardhat/Remix
+        - Related documentation: [links]
